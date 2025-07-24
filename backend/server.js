@@ -13,7 +13,7 @@ connectDB();
 
 const allowedOrigins = [
     "http://localhost:5173",
-    "https://blog-mhvats.onrender.com/",
+    "https://blog-mhvats.onrender.com/"
 ];
 
 app.use(cors({
