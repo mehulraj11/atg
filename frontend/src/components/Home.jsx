@@ -1,18 +1,20 @@
 import Header from "./Header";
 import HeroSection from "./HeroSection";
 import ArticleCard from "./ArticleCard";
-import articles from "../data/article"; // Assuming this path is correct
+import articles from "../data/article";
 import LeftSection from "./LeftSection";
-import Login from "../pages/Login"; // Assuming this path is correct
+import Login from "../pages/Login";
 import { useEffect, useState } from "react";
 
 function Home() {
   const [showLoginModal, setShowLoginModal] = useState(false);
-  // const token = localStorage.getItem("token");
+  const token = localStorage.getItem("token");
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setShowLoginModal(true);
+      if (!token) {
+        setShowLoginModal(true);
+      }
     }, 5000);
 
     return () => clearTimeout(timer);
