@@ -94,7 +94,7 @@ function Home() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-opacity-50 backdrop-blur-sm">
           <div className=" w-1/2 h-1/2 rounded-lg  flex items-center justify-center">
             <div className="w-full h-full flex items-center justify-center">
-              <Login />
+              <Login setShowLoginModal={setShowLoginModal} />
             </div>
           </div>
         </div>

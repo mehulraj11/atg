@@ -4,7 +4,8 @@ import facebook from "../assets/f_logo_RGB-Blue_1024.png";
 import google from "../assets/search.png";
 import InputField from "../components/InputField";
 import { Link, useNavigate } from "react-router-dom";
-function Login() {
+import axios from "axios";
+function Login({ setShowLoginModal }) {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,7 +26,7 @@ function Login() {
         }
       );
       localStorage.setItem("token", response.data.token);
-      navigate("/");
+      setShowLoginModal(false);
     } catch (error) {
       console.log(error.message);
     }
