@@ -13,15 +13,14 @@ connectDB();
 
 const allowedOrigins = [
     "http://localhost:5173",
-    "https://blog-mhvats.onrender.com/"
-];
-
+    "https://blog-mhvats.onrender.com"
+]
 app.use(cors({
     origin: function (origin, callback) {
         if (!origin || allowedOrigins.includes(origin)) {
             callback(null, true);
         } else {
-            callback(new Error("Not allowed by CORS"));
+            callback(new Error("Not allowed by CORS"))
         }
     }
 }));
