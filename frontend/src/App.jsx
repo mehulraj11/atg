@@ -1,12 +1,17 @@
 import React from "react";
 import Login from "./pages/Login";
-import Main from "./components/Main";
+import Home from "./components/Home";
+import { Route, Router, Routes } from "react-router-dom";
 const App = () => {
   return (
-    <div>
-      <Main />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+    </Routes>
   );
 };
 
+const Root = () => {
+  return;
+};
 export default App;
